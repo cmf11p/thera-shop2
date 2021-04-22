@@ -1,8 +1,9 @@
 import React from 'react';
 import './NavBar.css'
+import CartWidget from './CartWidget'
 
 export default function NavBar() {
-    var NaviBar = <nav className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    var NaviBar = <nav className="navbar navbar-nav navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div className="container">
       <a className="navbar-brand" href="#">Thera</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +24,7 @@ export default function NavBar() {
             <a className="nav-link" href="about_us.html">About Us</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="contact_us.html">Contact Us</a>
+            <CartWidget />
           </li>
         </ul>
       </div>
