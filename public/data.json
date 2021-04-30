@@ -1,0 +1,51 @@
+[
+    {
+    "id": 1,
+    "title": "The First One",
+    "description": "sit amet consectetur adipisicing elit. Est eius veniam, tempore animi dicta aspernatur voluptatem",
+    "price": "100.00",
+    "picUrl":"A",
+    "stock":15
+    },
+    {
+    "id": 2,
+    "title": "Close Second",
+    "description": "doloremque, laborum, eveniet pariatur vitae quo voluptate distinctio molestiae fuga",
+    "price": "50.00",
+    "picUrl":"B",
+    "stock":4
+
+    },
+    {
+    "id": 3,
+    "title": "Great Third",
+    "description": "Quam delectus quaerat inventore ullam dolores numquam recusandae reprehenderit, voluptatum dicta",
+    "price": "125.00",
+    "picUrl":"C",
+    "stock":7
+    },
+    {
+    "id": 4,
+    "title": "Fellow Fourth",
+    "description": "architecto molestias beatae? Sapiente nemo ratione dolores cum porro sequi soluta ducimus doloremque et, illum, voluptatem voluptatum",
+    "price": "99.99",
+    "picUrl":"D",
+    "stock":6
+    },
+    {
+    "id": 5,
+    "title": "Feisty Fifth",
+    "description": "explicabo quos expedita inventore! Necessitatibus laborum repellat veritatis pariatur impedit quaerat! Tenetur consequuntur consectetur",
+    "price": "33.17",
+    "picUrl":"E",
+    "stock":8
+    },
+    {
+    "id": 6,
+    "title": "Sad Sixth",
+    "description": "Facilis fugiat iure ad repellendus, laudantium temporibus maxime dolorum voluptatibus cupiditate corporis",
+    "price": "1337.69",
+    "picUrl":"F",
+    "stock":10
+    }
+] 

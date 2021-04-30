@@ -5,3 +5,4 @@ export default function Greeting({greeting}) {
         <h1>{greeting}</h1>
     )
 } 
+

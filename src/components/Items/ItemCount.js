@@ -15,12 +15,7 @@ export default function ItemCount({stock,initial,onAdd}) {
     };
 
     return (
-        <div className="card">
-            <div className="card-body">
-                <h4 className="card-title">Test</h4>
-                <p className="card-text">Some sort of experimental device</p>
-                <p className="card-text">No cost</p>
-            </div>
+        <div>
             <div className="card-body d-flex justify-content-between">
                 <button onClick={decCount} className="btn btn-danger">-</button> 
                 <p className="count-box align-self-center">{count}</p>

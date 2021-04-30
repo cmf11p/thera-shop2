@@ -1,16 +1,29 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import Greeting from './greeting/Greeting'
-import ItemCount from './Items/ItemCount'
+import ItemList from './Items/ItemList';
 
 export default function ItemListContainer() {
-    const onAdd = (count) => {
-        alert(`${count} items have been added to cart`);
-    };
+    
+    const [items,setItems] = useState([]);
+
+    useEffect(() => {
+        setTimeout(() => {
+        fetch("data.json", {
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            }
+        })
+            .then((response) => response.json())
+            .then((data) => setItems(data));
+        }, 2000);
+    }, []);
+    
     return(
         <div>
             <h1>Renderizado de la prop</h1>
             <Greeting greeting="Greeting"/>
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+            <ItemList ListProp={items}/>
         </div>
     );
 }
