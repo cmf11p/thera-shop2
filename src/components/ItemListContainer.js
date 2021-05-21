@@ -21,9 +21,11 @@ export default function ItemListContainer() {
     
     return(
         <div>
-            <h1>Renderizado de la prop</h1>
-            <Greeting greeting="Greeting"/>
+            <div>
+                <h1>Renderizado de la prop</h1>
+                <Greeting greeting="Greeting"/>
+            </div>
             <ItemList ListProp={items}/>
-        </div>
+        </div>  
     );
 }
