@@ -6,8 +6,8 @@ export default function ItemList({ListProp}) {
         <div className="container itemContainer">
             <div className="row">
                 {ListProp.map((item) => (
-                    <div className="col-sm">
-                        <Item key={item.id} Item={item} />
+                    <div className="col-sm" key={item.id}>
+                        <Item Item={item} />
                     </div>
                 ))}
             </div>

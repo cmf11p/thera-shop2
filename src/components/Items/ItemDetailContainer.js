@@ -1,9 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import ItemDetail from './ItemDetail'
+import { useParams } from 'react-router-dom'
 
-export default function ItemDetailContainer({ itemId }) {
+export default function ItemDetailContainer() {
     const [item, setItem] = useState([]);
-    const iditem = (item) => {return item.id === itemId};
+    const {id} = useParams();
+    console.log(id);
+    const iditem = (item) => {return item.id == id};
+    console.log(iditem);
     useEffect(() => {
         setTimeout(() => {
         fetch("data.json", {
@@ -14,8 +18,8 @@ export default function ItemDetailContainer({ itemId }) {
         })
             .then((response) => response.json())
             .then((data) => setItem(data.find(iditem)));
-        }, 2000);
-    }, []);
+        }, 500);
+    },[id]);
 
     return (
         <div>

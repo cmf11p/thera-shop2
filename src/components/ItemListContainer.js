@@ -16,7 +16,7 @@ export default function ItemListContainer() {
         })
             .then((response) => response.json())
             .then((data) => setItems(data));
-        }, 2000);
+        }, 1000);
     }, []);
     
     return(

@@ -3,15 +3,25 @@ import React from 'react';
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/Items/ItemDetailContainer'
+import {BrowserRouter,Switch,Route} from 'react-router-dom'
 
 export default class App extends React.Component {
   render() {
     return(
-      <div>
+      <BrowserRouter>
         <NavBar />
-        <ItemListContainer />
-        <ItemDetailContainer itemId={3}/>
-      </div>
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer />
+          </Route>
+          <Route path="/category/:id">
+            <ItemListContainer />
+          </Route>
+          <Route path="/item/:id">
+            <ItemDetailContainer />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     )
   }
 }
