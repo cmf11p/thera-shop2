@@ -7,7 +7,6 @@ export default function ItemListContainer() {
     const [items,setItems] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => {
         fetch("data.json", {
             headers: {
                 "Content-Type": "application/json",
@@ -16,7 +15,6 @@ export default function ItemListContainer() {
         })
             .then((response) => response.json())
             .then((data) => setItems(data));
-        }, 1000);
     }, []);
     
     return(

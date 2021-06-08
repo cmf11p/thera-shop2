@@ -5,11 +5,8 @@ import { useParams } from 'react-router-dom'
 export default function ItemDetailContainer() {
     const [item, setItem] = useState([]);
     const {id} = useParams();
-    console.log(id);
     const iditem = (item) => {return item.id == id};
-    console.log(iditem);
     useEffect(() => {
-        setTimeout(() => {
         fetch("data.json", {
             headers: {
                 "Content-Type": "application/json",
@@ -17,8 +14,7 @@ export default function ItemDetailContainer() {
             },
         })
             .then((response) => response.json())
-            .then((data) => setItem(data.find(iditem)));
-        }, 500);
+            .then((data) => setItem(data.find(iditem)));    
     },[id]);
 
     return (

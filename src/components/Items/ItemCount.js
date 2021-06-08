@@ -15,8 +15,8 @@ export default function ItemCount({stock,initial,onAdd}) {
     };
 
     return (
-        <div>
-            <div className="card-body d-flex justify-content-between">
+        <div className="d-flex flex-fill flex-column">
+            <div className="card-body d-flex justify-content-center">
                 <button onClick={decCount} className="btn btn-danger">-</button> 
                 <p className="count-box align-self-center">{count}</p>
                 <button onClick={incCount} className="btn btn-primary">+</button>
