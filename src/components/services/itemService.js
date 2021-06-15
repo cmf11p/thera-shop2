@@ -30,3 +30,7 @@ export function getFiltItems(filter) {
         })
     })
 }
+
+export function newOrder(buyer,cart,total) {
+
+}

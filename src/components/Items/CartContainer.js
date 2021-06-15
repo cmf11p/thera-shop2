@@ -4,6 +4,7 @@ import { CartContext } from '../context/CartContext';
 
 export default function CartContainer() {
     const { cart,clearCart,removeFromCart,totalPrice,totalItems } = useContext(CartContext);
+    console.log(cart);
 
     return(
         <div style={{paddingTop:'100px'}} className="d-flex flex-column align-items-center">
@@ -12,7 +13,6 @@ export default function CartContainer() {
                 <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Item</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Acción</th>
@@ -22,8 +22,7 @@ export default function CartContainer() {
                 <tbody id="itemscart">
                     {cart.map((itemu)=>(
                         <tr key={itemu.id}>
-                            <th scope="row">{itemu.id}</th>
-                            <td>{itemu.title}</td>
+                            <th scope="row">{itemu.title}</th>
                             <td>{itemu.qty}</td>
                             <td>
                                 
@@ -38,11 +37,11 @@ export default function CartContainer() {
                 <tfoot>
                     { cart.length===0 ? 
                         <tr id="footer-carrito">
-                            <th className="empty-cart" scope="row" colSpan="5">Carro vacio</th>
+                            <th className="empty-cart" scope="row" colSpan="4">Carro vacio</th>
                         </tr>
                         :
                         <tr id="footer-carrito">
-                            <th scope="row" colSpan="2">Total</th>
+                            <th scope="row">Total</th>
                             <td>{totalItems}</td>
                             <td>
                                 <button className="btn btn-danger btn-sm" id="vaciar-carrito" onClick={clearCart}>
@@ -56,7 +55,10 @@ export default function CartContainer() {
             </table>
             </div>
             <button type="button" className="return-button btn btn-warning mb-3">
-                <Link to={`/`} className="link-text">Seguir comprando</Link>
+                <Link to={`/`} className="link-text" style={{color:'black'}}>Seguir comprando</Link>
+            </button>
+            <button type="button" className="return-button btn btn-primary mb-3">
+                <Link to={`/checkout`} className="link-text" style={{color:'black'}}>Checkout</Link>
             </button>
         </div>
     )

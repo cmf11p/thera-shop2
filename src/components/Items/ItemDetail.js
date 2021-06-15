@@ -17,7 +17,7 @@ export default function ItemDetail({ item }) {
     return (
         <div className="container" style={{paddingTop:'100px'}}>
             <div className="jumbotron d-flex flex-column">
-                <h1 className="display-4">{item.title} <span className="badge bg-primary rounded-pill">In Stock: {item.stock}</span></h1>
+                <h1 className="display-4">{item.title} <span className="badge bg-secondary rounded-pill">In Stock: {item.stock}</span></h1>
                 <p className="lead">{item.description}</p>
                 <img src={item.picUrl} alt={item.title} />
                 <h4>Precio: S/. {item.price} </h4>
