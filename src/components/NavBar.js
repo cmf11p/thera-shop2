@@ -1,20 +1,9 @@
-import React,{useContext} from 'react';
+import React from 'react';
 import './NavBar.css'
 import CartWidget from './CartWidget'
-import { Link } from 'react-router-dom';
-import { CartContext } from "./context/CartContext";
+import { NavLink,Link } from 'react-router-dom';
 
 export default function NavBar() {
-  const {totalItems} = useContext(CartContext);
-  let extra=null;
-  if (totalItems!==0) {
-    extra=<li className="nav-item">
-    <Link to="/cart">
-    <CartWidget />
-    </Link>
-  </li>
-  }
-  else {extra=null}
     var NaviBar = <nav className="navbar navbar-nav navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div className="container">
       <Link to="/" className="navbar-brand">Thera</Link>
@@ -24,18 +13,19 @@ export default function NavBar() {
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="index.html">Home</a>
+            <span><NavLink to={"/category/Phones"} className="nav-link" activeClassName="active">Phones</NavLink></span>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="products.html">Products</a>
+          <span><NavLink to={"/category/Tablets"} className="nav-link" activeClassName="active">Tablets</NavLink></span>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="blog.html">Blog</a>
+          <span><NavLink to={"/category/Laptops"} className="nav-link" activeClassName="active">Laptops</NavLink></span>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="about_us.html">About Us</a>
+            <Link to="/cart">
+            <CartWidget />
+            </Link>
           </li>
-          {extra}
         </ul>
       </div>
     </div>

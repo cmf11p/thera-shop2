@@ -15,7 +15,7 @@ export default function ItemDetail({ item }) {
     };
 
     return (
-        <div className="container">
+        <div className="container" style={{paddingTop:'100px'}}>
             <div className="jumbotron d-flex flex-column">
                 <h1 className="display-4">{item.title} <span className="badge bg-primary rounded-pill">In Stock: {item.stock}</span></h1>
                 <p className="lead">{item.description}</p>
