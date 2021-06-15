@@ -25,7 +25,9 @@ export default function NavBar() {
             <a className="nav-link" href="about_us.html">About Us</a>
           </li>
           <li className="nav-item">
+            <Link to="/cart">
             <CartWidget />
+            </Link>
           </li>
         </ul>
       </div>

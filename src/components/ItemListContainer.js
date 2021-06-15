@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import Greeting from './greeting/Greeting'
 import ItemList from './Items/ItemList';
 
 export default function ItemListContainer() {
@@ -18,11 +17,7 @@ export default function ItemListContainer() {
     }, []);
     
     return(
-        <div>
-            <div>
-                <h1>Renderizado de la prop</h1>
-                <Greeting greeting="Greeting"/>
-            </div>
+        <div style={{paddingTop:'80px'}}>
             <ItemList ListProp={items}/>
         </div>  
     );

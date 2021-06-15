@@ -1,27 +1,12 @@
 import './App.css';
 import React from 'react';
-import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
-import ItemDetailContainer from './components/Items/ItemDetailContainer'
-import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import App2 from './App2';
+import AppContextProvider from './components/context/CartContext';
 
-export default class App extends React.Component {
-  render() {
-    return(
-      <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer />
-          </Route>
-          <Route path="/category/:id">
-            <ItemListContainer />
-          </Route>
-          <Route path="/item/:id">
-            <ItemDetailContainer />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+export default function App () {
+    return (
+      <AppContextProvider>
+        <App2 />
+      </AppContextProvider>
     )
   }
-}
