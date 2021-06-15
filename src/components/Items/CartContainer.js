@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 
 export default function CartContainer() {
-    const { cart,clearCart,removeFromCart } = useContext(CartContext);
+    const { cart,clearCart,removeFromCart,totalPrice,totalItems } = useContext(CartContext);
 
     return(
-        <div style={{paddingTop:'100px'}}>
-            <h2 className="header-cart">Carro de Compras</h2>
-            <div>
+        <div style={{paddingTop:'100px'}} className="d-flex flex-column align-items-center">
+            <h2 className="header-cart w-75">Carro de Compras</h2>
+            <div className="w-75">
                 <table className="table">
                 <thead>
                     <tr>
@@ -31,31 +31,31 @@ export default function CartContainer() {
                                     Borrar
                                 </button>
                             </td>
-                        <td>S/. <span>{itemu.price}</span></td>
+                        <td>S/. <span>{(itemu.price*itemu.qty).toFixed(2)}</span></td>
                     </tr>
                     ))}
                 </tbody>
                 <tfoot>
-                    { cart === [] ? 
+                    { cart.length===0 ? 
                         <tr id="footer-carrito">
                             <th className="empty-cart" scope="row" colSpan="5">Carro vacio</th>
                         </tr>
-                    :
+                        :
                         <tr id="footer-carrito">
                             <th scope="row" colSpan="2">Total</th>
-                            <td>{}</td>
+                            <td>{totalItems}</td>
                             <td>
                                 <button className="btn btn-danger btn-sm" id="vaciar-carrito" onClick={clearCart}>
                                     Vaciar
                                 </button>
                             </td>
-                            <td className="font-weight-bold">S/. <span>{}</span></td>
+                            <td className="font-weight-bold">S/. <span>{totalPrice}</span></td>
                         </tr>
                     }
                 </tfoot>
             </table>
             </div>
-            <button type="button" className="return-button btn btn-warning">
+            <button type="button" className="return-button btn btn-warning mb-3">
                 <Link to={`/`} className="link-text">Seguir comprando</Link>
             </button>
         </div>
