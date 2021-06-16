@@ -43,3 +43,19 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
+
+.imagecard {
+  flex: '1';
+    width: 200px;
+    height: 200px;
+    resize: both;
+    align-self: center;
+}
+
+.imagedet {
+  flex: '1';
+    width: 400px;
+    height: 400px;
+    resize: both;
+    align-self: center;
+}

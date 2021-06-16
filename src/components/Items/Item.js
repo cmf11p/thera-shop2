@@ -9,6 +9,7 @@ export default function Item({Item}) {
                 <div className="card-body">
                     <h4 className="card-title">{Item.title}</h4>
                     <p className="card-text">{Item.description}</p>
+                    <img src={Item.picUrl} className="imagecard"></img>
                 </div>
             </Link>
         </div>

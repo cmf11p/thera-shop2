@@ -19,7 +19,7 @@ export default function ItemDetail({ item }) {
             <div className="jumbotron d-flex flex-column">
                 <h1 className="display-4">{item.title} <span className="badge bg-secondary rounded-pill">In Stock: {item.stock}</span></h1>
                 <p className="lead">{item.description}</p>
-                <img src={item.picUrl} alt={item.title} />
+                <img src={item.picUrl} alt={item.title} className="imagedet"/>
                 <h4>Precio: S/. {item.price} </h4>
                 <div className="d-flex justify-content-center flex-fill">
                 {qty > 0 ? (
