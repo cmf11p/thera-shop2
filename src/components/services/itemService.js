@@ -1,6 +1,8 @@
-import db from './firebase'
+import db from './firebase';
+import firebase from 'firebase';
 
 const itemCollection = db.collection("items");
+const orders = db.collection("orders");
 
 export function getItems() {
     return itemCollection.get()
@@ -29,8 +31,4 @@ export function getFiltItems(filter) {
             return extra
         })
     })
-}
-
-export function newOrder(buyer,cart,total) {
-
 }

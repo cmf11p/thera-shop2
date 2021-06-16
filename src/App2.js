@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/Items/ItemDetailContainer'
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import CartContainer from './components/Items/CartContainer'
 import CheckOut from './components/Items/CheckOut'
+import Order from './components/Items/Order'
 
 export default class App extends React.Component {
   render() {
@@ -28,6 +29,9 @@ export default class App extends React.Component {
           </Route>
           <Route path="/checkout">
             <CheckOut/>
+          </Route>
+          <Route path="/order">
+            <Order/>
           </Route>
         </Switch>
       </BrowserRouter>

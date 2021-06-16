@@ -4,7 +4,6 @@ import { CartContext } from '../context/CartContext';
 
 export default function CartContainer() {
     const { cart,clearCart,removeFromCart,totalPrice,totalItems } = useContext(CartContext);
-    console.log(cart);
 
     return(
         <div style={{paddingTop:'100px'}} className="d-flex flex-column align-items-center">
